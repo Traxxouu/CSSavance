@@ -1,0 +1,224 @@
+/*------------------------------- Mobile first -------------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; 
+}
+
+header{
+
+    position: sticky;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffffff00;
+}
+
+
+nav {
+    position: sticky;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    z-index: 10000; 
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.603);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    max-width: 50%; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    background: linear-gradient(to left, rgb(81, 0, 255), rgb(255, 0, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+nav svg {
+    width: 24px; 
+    height: 24px; 
+}
+
+header h1, header h3 {
+    margin: 10px 0;
+    text-align: left;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 1; 
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    background-color: #f4e099; 
+    padding: 20px;
+    border-radius: 10px; 
+    margin-bottom: 20px; 
+}
+
+main section {
+    display: block;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+main section svg {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+main section p {
+    margin: 0;
+    text-align: justify;
+}
+
+main svg {
+    width: 100px; 
+    height: 100px; 
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+}
+
+main p {
+    margin-top: 10px;
+    flex: 1;
+}
+
+
+
+/* From Uiverse.io by Randdose */ 
+.button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: rgb(250, 250, 250) solid 0.15em;
+    border-radius: 0.25em;
+    color: rgb(0, 94, 255);
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+    margin: 20px auto; 
+    max-width: 90%; 
+  }
+  
+  .button p {
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .button:hover {
+    color: #212121;
+  }
+  
+  .button:active {
+    border-color: rgb(255, 255, 255);
+  }
+  
+  .button::after, .button::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: rgb(0, 112, 250);
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+  }
+  
+  .button::before {
+    left: 0;
+    transform: translateX(-8em);
+  }
+  
+  .button::after {
+    right: 0;
+    transform: translateX(8em);
+  }
+  
+  .button:hover:before {
+    transform: translateX(-1em);
+  }
+  
+  .button:hover:after {
+    transform: translateX(1em);
+  }
+  
+  .button:active:before,
+  .button:active:after {
+    background: rgb(255, 255, 255);
+  }
+
+
+
+/* -------------------------- responsive pour tablette et PC ----------------------- */
+@media (min-width: 600px) {
+    main {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    main img {
+        margin-right: 20px;
+    }
+
+    main p {
+        flex: 1;
+    }
+
+    .button {
+        max-width: 50%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .button {
+        max-width: 30%; 
+    }
+}
